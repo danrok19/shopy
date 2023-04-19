@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import Button from './components/Button';
 import Dropdown from './components/Dropdown';
-import Navbar from './components/navbar';
+import Nav from './components/Nav';
+
 
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
 
   return (
     <div className="bg-zinc-900 h-screen">
-      <Navbar />
+      <Nav />
       <div className="pt-20">
         <Button accept rounded>OK!</Button>
       </div>
