@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import Navbar from './components/Navbar';
 import Button from './components/Button';
 import Dropdown from './components/Dropdown';
+import Navbar from './components/navbar';
 
 
 function App() {
@@ -20,13 +20,13 @@ function App() {
   }
 
   return (
-    <div class="bg-zinc-900 h-screen">
-      <Navbar/>
-      <div class="pt-20">
+    <div className="bg-zinc-900 h-screen">
+      <Navbar />
+      <div className="pt-20">
         <Button accept rounded>OK!</Button>
       </div>
       <div> 
-        <Dropdown options={options} onSelect={onSelect} selection={selection}/>
+        <Dropdown options={options} onChange={onSelect} value={selection}/>
       </div>
     </div>
   );
