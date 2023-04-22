@@ -38,7 +38,7 @@ function Dropdown({ children, options, onChange, value }) {
 
     const renderedOptions = options.map((option) => {
         return (
-            <div key={option.value} onClick={() => handleOptionClicked(option)} className='bg-neutral-800 text-gray-100 cursor-pointer border-2 border-violet-300 rouneded-lg'>
+            <div key={option.value} onClick={() => handleOptionClicked(option)} className='bg-neutral-800 text-gray-100 cursor-pointer border-b-2 border-b-neutral-700 text-center py-1'>
                 {option.label}
             </div>
         )
@@ -46,14 +46,14 @@ function Dropdown({ children, options, onChange, value }) {
 
 
     return (
-        <div ref={divElement} className='bg-neutral-200 w-48 rounded-t-lg rounded-b-lg'>
-            <div onClick={handleClick} className='bg-violet-500 px-4 rounded-t-lg flex justify-between cursor-pointer border border-violet-400'>
+        <div ref={divElement} className='w-48 rounded-t-lg rounded-b-lg'>
+            <div onClick={handleClick} className='bg-neutral-700 px-4 rounded-t-lg flex justify-between cursor-pointer py-2'>
                 <div>
                     {value?.label || 'Select...'}
                 </div>
                 ▼
             </div>
-            {isOpen && <div className='border border-violet-400 rounded'>{renderedOptions}</div>}
+            {isOpen && <div className='rounded'>{renderedOptions}</div>}
         </div>
     )
 }
