@@ -7,7 +7,7 @@ const newsApi = createApi({
   }),
   endpoints(builder) {
     return {
-      fetchAlbums: builder.query({
+      fetchNews: builder.query({
         query: () => {
           return {
             url: '/news',
@@ -15,9 +15,24 @@ const newsApi = createApi({
           };
         },
       }),
+      addNews: builder.mutation({
+        query: (news) => {
+          return{
+            url: '/news',
+            method: 'POST',
+            body:{
+              id: news.id,
+              size: news.size,
+              url: news.url,
+              body: news.body
+            }
+          }
+
+          }
+      })
     };
   },
 });
 
-export const { useFetchAlbumsQuery } = newsApi;
+export const { useFetchNewsQuery, useAddNewsMutation } = newsApi;
 export { newsApi };
