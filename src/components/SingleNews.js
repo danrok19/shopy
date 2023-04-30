@@ -6,7 +6,7 @@ function SingleNews({ children, big, small, headValue, image, ...rest }) {
     //rest.className returns all the stylying stuff passed in props
     //depending on what props were passed the expected button will be returned(primary, accept, secondary, danger, rounded)
     const classSetup = classNames('div2',rest.className, 'font-bold', 'py-2', 'px-4', 'rounded', 
-    'transition ease-in-out delay-100','bg-neutral-800 border-solid border-gray-900 mb-8 text-white hover:bg-neutral-700 hover:text-black cursor-pointer',{
+    'transition ease-in-out delay-100','bg-neutral-800 border-solid border-gray-900 mb-8 text-white hover:bg-neutral-700 hover:text-black cursor-pointer mx-auto',{
         'h-96 w-longNews': big,
         'w-shortNews h-72 ': small,
     }

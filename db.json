@@ -1,0 +1,16 @@
+{
+    "news":[
+        {
+            "id": 1,
+            "size": "big",
+            "url": "https://picsum.photos/500/300",
+            "body": "Blah blahblah blah blah blah blah blah blahblahblah blahblahblahblah blahblahblahblahblahblah blahblahblah blahblahblahblah blahblahblahblah"
+        },
+        {
+            "id": 2,
+            "size": "small",
+            "url": "https://picsum.photos/300/200",
+            "body": "Blah blahblah blah blah blah blah blah blahblahblah blahblahblahblah blahblahblahblahblahblah blahblahblah blahblahblahblah blahblahblahblah"
+        }
+    ]
+}

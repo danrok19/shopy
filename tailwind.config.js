@@ -8,6 +8,7 @@ module.exports = {
       width: {
         'shortNews': '38rem',
         'longNews': '64rem',
+        'minimumNav' : '200px'
       }
     },
   },

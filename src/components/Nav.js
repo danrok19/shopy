@@ -1,17 +1,17 @@
 import classNames from 'classnames';
 import { useState, useRef, useEffect } from 'react';
 import SearchBar from './SearchBar';
+import { Link } from 'react-router-dom';
 
 function Nav() {
 
     //all links in the navbar
     const links = [
         { label: 'Home', path: '/home' },
-        { label: 'News', path: '/new' },
-        { label: 'Loadouts', path: '/loadouts' },
-        { label: 'Skins', path: '/skins' },
-        { label: 'Weapons', path: '/weapons' },
-        { label: 'Stats', path: '/stats' },
+        { label: 'News', path: '/news' },
+        { label: 'Buttons', path: '/buttons' },
+        { label: 'Dropdown', path: '/dropdown' },
+
     ];
 
     const [isOpen, setIsOpen] = useState(false);
@@ -45,13 +45,13 @@ function Nav() {
     let classSetup = classNames('cursor-pointer', 'hover:bg-neutral-600', 'hover:rounded-lg text-center');
 
     const renderedLinks = links.map((link) => {
-        return <li key={link.label} className={classSetup}>{link.label}</li>;
+        return <Link key={link.label} className={classSetup} to={link.path}>{link.label}</Link>;
     })
 
     const classSetupSpan = classNames('block w-5 h-0.5 my-1 rounded-full bg-gray-700 transition-all duration-300 ease-in-out')
 
     return (
-        <div className='pt-3'>
+        <div className='bg-zinc-900 pt-4'>
             <div className="hidden lg:flex absolute bg-neutral-800 w-11/12 mx-20 p-2 rounded text-gray-100 justify-between">
                 <ul className="flex gap-20">
                     {renderedLinks}
@@ -60,7 +60,7 @@ function Nav() {
                     <SearchBar />
                 </div>
             </div>
-            <div ref={divElement} className="flex justify-between bg-neutral-800 mx-20 p-2 rounded text-gray-100 lg:hidden">
+            <div ref={divElement} className="flex min-w-min justify-between bg-neutral-800 mx-20 p-2 rounded text-gray-100 lg:hidden">
                 <span>WZaIm</span>
                 <button className='inline-block cursor-pointer border-none bg-transparent' onClick={handleClick}>
                     <span className={classSetupSpan}></span>
