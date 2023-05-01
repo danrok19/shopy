@@ -13,4 +13,4 @@ export const store = configureStore({
 
 setupListeners(store.dispatch);
 
-export { useFetchNewsQuery, useAddNewsMutation } from './apis/newsApi';
+export { useFetchNewsQuery, useAddNewsMutation, useDeleteNewsMutation } from './apis/newsApi';

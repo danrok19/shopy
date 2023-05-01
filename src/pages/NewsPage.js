@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import nextId from "react-id-generator";
 import SingleNews from "../components/SingleNews";
-import { useFetchNewsQuery, useAddNewsMutation  } from "../store";
+import { useFetchNewsQuery, useAddNewsMutation } from "../store";
 import Button from '../components/Button';
 
 
@@ -14,8 +14,9 @@ function NewsPage() {
     const [newsBody, setNewsBody] = useState('');
     
     const {data, error, isLoading} = useFetchNewsQuery(); 
+
     const [addNews, result] = useAddNewsMutation();
-    console.log(data, error, isLoading)
+
 
     const handleOpeningForm = () =>{
         setOpenForm(!openForm);
@@ -46,21 +47,21 @@ function NewsPage() {
     let content;
 
     if(isLoading){
-        content = <div className="text-white">Loading...</div>
+        content = <div className="text-white h-screen">Loading...</div>
     }
     else if(error){
-        content = <div>Something has crashed...</div>
+        content = <div className="text-white h-screen">Something has crashed...</div>
     }
     else{
         content = data.map(newO =>{
             if(newO.size === 'big'){
                 return <div key={newO.id}>
-                <SingleNews big img={newO.url}  headValue={'Tutyl moze byc taki'} >{newO.body}</SingleNews>
+                <SingleNews big img={newO.url} headValue={'Tutyl moze byc taki'} id={newO.id}>{newO.body}</SingleNews>
             </div>
             }
             else{
                 return <div key={newO.id}>
-                <SingleNews small img={newO.url}  headValue={'Tutyl moze byc taki'} >{newO.body}</SingleNews>
+                <SingleNews small img={newO.url} headValue={'Tutyl moze byc taki'} id={newO.id}>{newO.body}</SingleNews>
             </div>
             }
             

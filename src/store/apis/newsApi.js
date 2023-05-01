@@ -29,10 +29,18 @@ const newsApi = createApi({
           }
 
           }
+      }),
+      deleteNews: builder.mutation({
+        query: (id) => {
+          return{
+            url: `/news/${id}`,
+            method: 'DELETE',
+          }
+        }
       })
     };
   },
 });
 
-export const { useFetchNewsQuery, useAddNewsMutation } = newsApi;
+export const { useFetchNewsQuery, useAddNewsMutation, useDeleteNewsMutation } = newsApi;
 export { newsApi };

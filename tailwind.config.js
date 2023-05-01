@@ -9,6 +9,9 @@ module.exports = {
         'shortNews': '38rem',
         'longNews': '64rem',
         'minimumNav' : '200px'
+      },
+      height: {
+        'longer': '26rem',
       }
     },
   },
