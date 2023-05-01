@@ -38,7 +38,7 @@ function Dropdown({ children, options, onChange, value }) {
 
     const renderedOptions = options.map((option) => {
         return (
-            <div key={option.value} onClick={() => handleOptionClicked(option)} className='bg-neutral-800 text-gray-100 cursor-pointer border-b-2 border-b-neutral-700 text-center py-1'>
+            <div key={option.value} onClick={() => handleOptionClicked(option)} className='bg-neutral-800 text-gray-100 cursor-pointer border-b-2 border-b-neutral-700 text-center py-1 hover:bg-neutral-700'>
                 {option.label}
             </div>
         )

@@ -37,8 +37,11 @@ function ButtonsPage() {
 
     return (
         <div className="bg-zinc-900 h-screen pt-20">
-            <Button accept rounded>OK!</Button>
-            <Button secondary>Ups</Button>
+            <Button accept rounded>Accept rounded</Button>
+            <Button secondary>Secondary</Button>
+            <Button accept>Accept</Button>
+            <Button danger>Danger</Button>
+            <Button primary>Primary</Button>
 
 
             <div className='p-2'>
