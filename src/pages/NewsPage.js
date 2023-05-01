@@ -40,6 +40,8 @@ function NewsPage() {
         setNewsSize('');
         setNewsSize('');
         setNewsBody('');
+
+        setOpenForm(false);
     }
 
     let id = nextId();
@@ -69,8 +71,8 @@ function NewsPage() {
     }
 
     return (
-        <div className='bg-zinc-900 h-full pt-20 pb-10'>
-            <Button primary onClick={handleOpeningForm}>Add news</Button>
+        <div className='bg-zinc-900 pt-20 pb-10'>
+            <Button primary onClick={handleOpeningForm} className='mb-2'>Add news</Button>
             {openForm && <form onSubmit={handleClick} className='bg-neutral-800 flex flex-col px-10 py-5 w-1/3 my-5 mx-auto'>
                 <label className='text-white'>Big of small news card</label>
                 <input type="text" value={newsSize} onChange={handleChangeSize} className='border rounded'/>

@@ -8,6 +8,13 @@ const newsApi = createApi({
   endpoints(builder) {
     return {
       fetchNews: builder.query({
+        providesTags: (result, error, arg) =>{
+          const tags = result.map((news)=>{
+            return { type: 'News', id: news.id}
+          })
+          tags.push({type:'New'});
+          return tags;
+        },
         query: () => {
           return {
             url: '/news',
@@ -16,6 +23,9 @@ const newsApi = createApi({
         },
       }),
       addNews: builder.mutation({
+        invalidatesTags: (result, error, news) =>{
+          return [{type:'New'}]
+        },
         query: (news) => {
           return{
             url: '/news',
@@ -31,6 +41,9 @@ const newsApi = createApi({
           }
       }),
       deleteNews: builder.mutation({
+        invalidatesTags: (result, error, arg) =>{
+          return [{type:'News', id: arg.id}]
+        },
         query: (id) => {
           return{
             url: `/news/${id}`,
