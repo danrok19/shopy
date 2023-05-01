@@ -1,50 +1,14 @@
-import { useState } from 'react';
-import nextId from "react-id-generator";
 import SingleNews from "../components/SingleNews";
-import { useFetchNewsQuery, useAddNewsMutation } from "../store";
+import { useFetchNewsQuery  } from "../store";
 import Button from '../components/Button';
+import useForm from "../hooks/use-form"; 
 
 
 function NewsPage() {
 
-
-    const [openForm, setOpenForm] = useState(false);
-    const [newsSize, setNewsSize] = useState('');
-    const [newsUrl, setNewsUrl] = useState('');
-    const [newsBody, setNewsBody] = useState('');
-    
     const {data, error, isLoading} = useFetchNewsQuery(); 
+    const {openForm, handleOpeningForm, newsSize, handleChangeSize, newsUrl, handleChangeUrl, newsBody, handleChangeBody, handleClick} = useForm();
 
-    const [addNews, result] = useAddNewsMutation();
-
-
-    const handleOpeningForm = () =>{
-        setOpenForm(!openForm);
-    }
-
-    const handleChangeSize = (event) => {
-        setNewsSize(event.target.value)
-    }
-    const handleChangeUrl = (event) => {
-        setNewsUrl(event.target.value)
-    }
-    const handleChangeBody = (event) => {
-        setNewsBody(event.target.value)
-    }
-
-    const handleClick = (event) =>{
-        event.preventDefault();
-
-        addNews({id:id, size:newsSize, url:newsUrl, body:newsBody});
-
-        setNewsSize('');
-        setNewsSize('');
-        setNewsBody('');
-
-        setOpenForm(false);
-    }
-
-    let id = nextId();
 
     let content;
 
